@@ -37,7 +37,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div>
+        <>
             <Nav />
             <Routes>
               <Route 
@@ -57,7 +57,7 @@ function App() {
                 element={<NoMatch />} 
               />
             </Routes>
-        </div>
+        </>
       </Router>
     </ApolloProvider>
   );
