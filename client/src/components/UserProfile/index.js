@@ -33,9 +33,8 @@ const Profile = () => {
   }
 
   return (
-    // create profile box here
     <div>
-      <h1>This is a test. You reached the div profile box since you've logged in!!!! </h1> 
+      <h1>This is a test. You reached the div ***profile box*** since you've logged in!!!! </h1>
     </div>
   );
 };
