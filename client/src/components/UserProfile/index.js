@@ -34,7 +34,7 @@ const Profile = () => {
 
   return (
     <div>
-      <h1>This is a test. You reached the div profile box since you've logged in!!!! </h1>
+      <h1>This is a test. You reached the div ***profile box*** since you've logged in!!!! </h1>
     </div>
   );
 };
