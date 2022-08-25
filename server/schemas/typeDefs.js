@@ -15,7 +15,8 @@ const typeDefs = gql`
   }
 
   type Query {
-    me: User #we can delete this once other Query's are added. Just needed this as a place holder for the login/sign up feature. 
+    me: User
+    user: User
   }
 
   type Mutation {
