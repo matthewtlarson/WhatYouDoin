@@ -1,98 +1,115 @@
-const { Schema, model } = require('mongoose');
-const Group = require('./Group');
-const Event = require('./Event');
+const { Schema, model } = require("mongoose");
+const Group = require("./Group");
+const Event = require("./Event");
 
+const bcrypt = require("bcrypt");
 
-const bcrypt = require('bcrypt');
-
+// new comment
 
 const userSchema = new Schema({
   firstName: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
   },
   lastName: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
   },
   email: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
+    match: [/.+@.+\..+/, "Must match an email address!"],
   },
   password: {
     type: String,
     required: true,
-    minlength: 5
+    minlength: 5,
   },
-
+  username: {
+    type: String,
+    maxlength: 30,
+    trim: true,
+  },
   profilePicture: {
     type: String,
-    trim: true
+    trim: true,
   },
   area: {
     type: String,
     minlength: 5,
-    trim: true
+    trim: true,
   },
   birthday: {
-    type: Date
+    type: Date,
   },
   flakeRating: {
     type: Number,
     default: 100,
     min: 0,
-    max: 100
+    max: 100,
   },
+  
+  publicRequests: {
+    type: String,
+    trim: true,
+  },
+  
+  userRequests: 
+  {
+    type: String,
+    trim: true,
+  },
+
   eventsAttended: [
     {
       eventName: {
         type: String,
-        trim: true
+        trim: true,
       },
-      date: Date
-    }
+      date: Date,
+    },
   ],
+
   connections: [
     {
       selfUsername: {
         type: String,
         maxlength: 30,
-        trim: true
+        trim: true,
       },
       otherUsername: {
         type: String,
         maxlength: 30,
-        trim: true
+        trim: true,
       },
       closeFriend: {
         type: Boolean,
         default: false,
-      }
-    }
+      },
+    },
   ],
 
-    events: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Event' 
-      }
-    ],
+  events: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Event",
+    },
+  ],
 
-    groups: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Group' 
-      }
-    ]
-
+  groups: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Group",
+    },
+  ],
 });
 
 // set up pre-save middleware to create password
-userSchema.pre('save', async function (next) {
-  if (this.isNew || this.isModified('password')) {
+userSchema.pre("save", async function (next) {
+  if (this.isNew || this.isModified("password")) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
   }
@@ -105,6 +122,6 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 
-const User = model('User', userSchema);
+const User = model("User", userSchema);
 
 module.exports = User;
