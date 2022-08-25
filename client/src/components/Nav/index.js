@@ -9,12 +9,12 @@ function Nav() {
     if (Auth.loggedIn()) {
       return (
         <ul className="flex-row">
-          <li className="mx-1">
+          <li className="ml-1 mt-2 p-1">
             <Link to="/orderHistory">
               Test Tab
             </Link>
           </li>
-          <li className="mx-1">
+          <li className="mx-3 mt-2 p-1">
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
             <a href="/" onClick={() => Auth.logout()}>
               Logout
@@ -25,15 +25,15 @@ function Nav() {
     } else {
       return (
         <ul className="flex-row">
-          <li className="mx-1">
-            <Link to="/signup">
+          <li className="ml-3 mt-2 p-1">
+            <Link to="/login" style={{ textDecoration: 'none'}}>
+              Login
+            </Link>
+          <li className="mx-3 mt-2 p-1">
+            <Link to="/signup" style={{ textDecoration: 'none'}}>
               Signup
             </Link>
           </li>
-          <li className="mx-1">
-            <Link to="/login">
-              Login
-            </Link>
           </li>
         </ul>
       );
@@ -41,11 +41,10 @@ function Nav() {
   }
 
   return (
-    <header className="flex-row px-1">
+    <header className="flex-row px-5 justify-content-end">
       <h1>
-        <Link to="/">
-          <img src={logo} alt="logo" />
-          
+        <Link to="/" style={{ textDecoration: 'none'}}>
+          <img src={logo} alt="logo" className='mt-1 mx-1 position-absolute top-0 start-0'/>
         </Link>
       </h1>
 
