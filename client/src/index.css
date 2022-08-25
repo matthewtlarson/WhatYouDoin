@@ -1,6 +1,6 @@
 :root {
-  --primary: #232F3E;
-  --secondary: #F3A847;
+  --primary: #53575c;
+  --secondary: #f4f118;
   --tertiary: #B12704;
   --light: #fafafa;
   --dark: #272f32;
@@ -81,6 +81,7 @@ a:hover {
 
 header {
   background: var(--primary);
+  max-height: 100px;
 }
 
 header a {
@@ -109,7 +110,7 @@ button[disabled] {
 }
 
 img {
-  max-width: 100%;
+  max-width: 9%;
 }
 
 span[role="img"] {
