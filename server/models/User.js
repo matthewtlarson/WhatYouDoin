@@ -27,13 +27,7 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-  username: {
-    type: String,
-    required: true,
-    unique: true,
-    maxlength: 30,
-    trim: true
-  },
+
   profilePicture: {
     type: String,
     trim: true
@@ -65,15 +59,11 @@ const userSchema = new Schema({
     {
       selfUsername: {
         type: String,
-        required: true,
-        unique: true,
         maxlength: 30,
         trim: true
       },
       otherUsername: {
         type: String,
-        required: true,
-        unique: true,
         maxlength: 30,
         trim: true
       },
