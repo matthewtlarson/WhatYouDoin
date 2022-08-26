@@ -14,24 +14,26 @@ const typeDefs = gql`
     flakeRating: String
     publicRequests: String
     userRequests: String
+    connections: [Connection]
   }
 
   type Connection {
     selfUsername: String!
     otherUsername: String
     closeFriend: Boolean
-    connections: [String]
+    # connections: [String] per Rachel 
   }
 
 
   type Event {
     createdAt: String!
     time: String
+    title: String
     commitments: [String]
     flake: [String]
     theme: String
     active: String
-    author: String
+    author: String  #change string to User. we could pull event by ID and find author user and find their list of connections. 
     description: String
     address: String
     private: String

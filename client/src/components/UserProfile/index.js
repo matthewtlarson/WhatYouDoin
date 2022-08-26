@@ -6,22 +6,25 @@ import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 import logo from "../../assets/img/logo.png"
 
-import { QUERY_USER, QUERY_ME } from '../../utils/queries';
+import { QUERY_USER, QUERY_ME, QUERY_USER_CARD } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
 const Profile = () => {
-  const { email: userParam } = useParams();
-
-  const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-    variables: { email: userParam },
-  });
+  // const { email: userParam } = useParams();
+  const profile = Auth.getProfile()
+  const { loading, data } = useQuery(QUERY_USER_CARD, {
+    variables: { email: profile.data.email }
+  })
+  // const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+  //   variables: { email: userParam },
+  // });
 
   const user = data?.me || data?.user || {};
-  // navigate to personal profile page if email is yours
-  if (Auth.loggedIn() && Auth.getProfile().data.email === userParam) {
-    return <Navigate to="/" />;
-  }
+  // // navigate to personal profile page if email is yours
+  // if (Auth.loggedIn() && Auth.getProfile().data.email === userParam) {
+  //   return <Navigate to="/" />;
+  // }
 
   if (loading) {
     return <div>Loading...</div>;
@@ -38,6 +41,7 @@ const Profile = () => {
 
   return (
     <div style={{backgroundColor: 'grey'}}>
+      <p>{ (user.connections.length)} </p>
       <div style={{textAlign: 'center'}}>
         <Image style={{width: '15vh', marginBottom: '1vh'}} className="col-6" fluid="true" roundedCircle="true" src={logo}/>
         <Button style={{width: '11vh', margin: '3vh'}} variant="warning">Full Profile</Button>{' '}
