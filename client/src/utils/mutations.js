@@ -11,6 +11,17 @@ export const LOGIN = gql`
   }
 `;
 
+export const CREATE_EVENT = gql`
+  mutation addEvent($description: String!) {
+    addEvent(description: $description) {
+      _id
+      description
+      eventAuthor
+      createdAt
+    }
+  }
+`;
+
 export const ADD_USER = gql`
   mutation addUser(
     $firstName: String!
