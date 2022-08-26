@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
+import Button from 'react-bootstrap/Button';
+import Collapse from 'react-bootstrap/Collapse';
 
 import { QUERY_USER, QUERY_ME } from '../../utils/queries';
 
@@ -8,6 +10,7 @@ import Auth from '../../utils/auth';
 
 const UserFeed = () => {
   const { email: userParam } = useParams();
+  const [open, setOpen] = useState(false);
 
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { email: userParam },
@@ -31,16 +34,54 @@ const UserFeed = () => {
       </h4>
     );
   }
-
+    // <>
+    //   <Button
+    //     onClick={() => setOpen(!open)}
+    //     aria-controls="example-collapse-text"
+    //     aria-expanded={open}
+    //   >
+    //     click
+    //   </Button>
+    //   <Collapse in={open}>
+    //     <div id="example-collapse-text">
+    //       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+    //       terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
+    //       labore wes anderson cred nesciunt sapiente ea proident.
+    //     </div>
+    //   </Collapse>
+    // </>
+  
   return (
-        <form style={{width: '100%', marginTop: '30px'}}>
-          <div className="form-group border border-primary p-3 mb-2 text-dark text-center" style={{backgroundColor: 'grey'}}>
+    <div style={{display: 'flex', flexDirection: 'column', width: '100%', backgroundColor: 'white'}}>
+    <Button
+        className='fs-3'
+        style={{height: '100px', width: '100%', marginTop: '30px', backgroundColor: '#979dac', color: 'black'}}
+        onClick={() => setOpen(!open)}
+        aria-controls="example-collapse-text"
+        aria-expanded={open}
+      >
+        click me to post an event!
+      </Button>
+      <Collapse in={open}>
+        <div id="example-collapse-text">
+        <form style={{height: '100px', width: '100%', backgroundColor: '#979dac'}}>
+          <div className="form-group border border-primary p-3 mb-2 text-dark text-center collpase">
             <label for="exampleTextarea1"><h3>Have an event coming up?</h3></label>
-            <input type="text" class="form-control" style={{height: '100px'}} placeholder="enter the details for your event here" />
+            <input type="text" class="form-control" style={{height: '100px'}} placeholder="enter a description for your event here" />
+            <input type="text" class="form-control" style={{height: '100px'}} placeholder="what time is your event?" />
+            <input type="text" class="form-control" style={{height: '100px'}} placeholder="where is the event being held?" />
+            <label for="private" class="form-control" style={{height: '100px'}}>is the event private?</label>
+            <select name="private" id="private">
+              <option value="yes">yes</option>
+              <option value="no">no</option>
+            </select>
           </div>
           <button type="submit" className="btn btn-primary p-3 mb-2 bg-danger text-white" style={{width: '50%', marginLeft: '25%'}}>Post Event!</button>
         </form>
+        </div>
+      </Collapse>
+    </div>
   );
-};
+}
 
 export default UserFeed;

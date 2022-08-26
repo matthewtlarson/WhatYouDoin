@@ -37,7 +37,7 @@ const Profile = () => {
   }
 
   return (
-    <div style={{backgroundColor: 'grey'}}>
+    <div style={{backgroundColor: 'white'}}>
       <div style={{textAlign: 'center'}}>
         <Image style={{width: '15vh', marginBottom: '1vh'}} className="col-6" fluid="true" roundedCircle="true" src={logo}/>
         <Button style={{width: '11vh', margin: '3vh'}} variant="warning">Full Profile</Button>{' '}
