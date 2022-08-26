@@ -6,21 +6,35 @@ const typeDefs = gql`
     _id: ID
     firstName: String!
     lastName: String
-    email: String!
     username: String
+    email: String!
     profilePicture: String
     area: String!
     birthday: String
     flakeRating: String
+<<<<<<< HEAD
     publicRequests: String
     userRequests: String
     connections: [Connection]
+=======
+    events: [Event]!
+    connections: [Connection]
+  }
+  type Event {
+    _id: ID
+    title: String
+    date: String
+    eventAuthor: String
+    description: String
+    createdAt: String
+>>>>>>> 0dcfa8971e568a4ae44720e7849efeb031190528
   }
 
   type Connection {
     selfUsername: String!
     otherUsername: String
     closeFriend: Boolean
+<<<<<<< HEAD
     # connections: [String] per Rachel 
   }
 
@@ -38,9 +52,18 @@ const typeDefs = gql`
     address: String
     private: String
     image: String
+=======
+  }
+
+  type Group {
+    title: String
+    members: [User]
+    events: [Event]
+>>>>>>> 0dcfa8971e568a4ae44720e7849efeb031190528
   }
 
   type Recap {
+    _id: ID
     image: String
     eventDescription: String
   }
@@ -52,14 +75,19 @@ const typeDefs = gql`
 
   type Query {
     me: User
-    user(email: String!): User
+    user(username: String!): User
     users: [User]
     username: [User]
+    # events: Event
+    # events: [Event]
+    events(username: String): [Event]
+    event(eventId: ID!): Event
   }
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addEvent(description: String!, eventAuthor: String!): Event
   }
 `;
 
