@@ -23,13 +23,13 @@ const Home = () => {
         >
         <div>
           <div style={{textAlign: 'center'}}>
-            <Button style={{width: '20vh', borderStyle: 'solid', marginTop: '2vh'}} variant='warning'>Events</Button>
+            <Button style={{width: '20vh', borderStyle: 'solid', marginTop: '2vh', backgroundColor: '#541675', color: 'white', borderColor: 'grey'}} variant='warning'>Events</Button>
           </div>
           <div style={{textAlign: 'center'}}>
-            <Button style={{width: '20vh', borderStyle: 'solid', marginTop: '2vh'}} variant='warning'>Friends</Button>
+            <Button style={{width: '20vh', borderStyle: 'solid', marginTop: '2vh', backgroundColor: '#541675', color: 'white', borderColor: 'grey'}} variant='warning'>Friends</Button>
           </div>
           <div style={{textAlign: 'center'}}>
-            <Button style={{width: '20vh', borderStyle: 'solid', marginTop: '2vh'}} variant='warning'>Groups</Button>
+            <Button style={{width: '20vh', borderStyle: 'solid', marginTop: '2vh', backgroundColor: '#541675', color: 'white', borderColor: 'grey'}} variant='warning'>Groups</Button>
           </div>
         </div>
         </Col>
