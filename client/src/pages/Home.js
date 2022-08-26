@@ -13,9 +13,9 @@ import Auth from '../utils/auth';
 
 const Home = () => {
   return (
-    <Container >
+    <Container fluid='true'>
       <Row className='row justify-content-between' >
-        <Col sm={2} style={{ background: 'grey', minHeight: '90vh', marginTop: 25 }}>
+        <Col sm={2} style={{ background: 'grey', minHeight: '90vh', marginLeft: '50px'}}>
           Test This sidebar out
         </Col>
 
@@ -23,10 +23,10 @@ const Home = () => {
         {Auth.loggedIn() ? (
           <>
 
-            <Col sm={3} style={{ background: 'orange' }} className='d-flex flex-grow-1'>
+            <Col sm={3} style={{ background: 'gold' }} className='d-flex flex-grow-1'>
               <UserFeed />
             </Col>
-            <Col sm={3} style={{ background: 'red' }}>
+            <Col sm={3} style={{ background: 'grey', marginRight: '50px' }}>
               <UserProfile />
             </Col>
           </>
