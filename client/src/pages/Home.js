@@ -9,6 +9,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+import Button from 'react-bootstrap/Button'
+
 import Auth from "../utils/auth";
 
 const Home = () => {
@@ -19,7 +21,17 @@ const Home = () => {
           sm={2}
           style={{ background: "grey", minHeight: "90vh", marginLeft: '50px'}}
         >
-          Test This sidebar out
+        <div>
+          <div style={{textAlign: 'center'}}>
+            <Button style={{width: '20vh', borderStyle: 'solid', marginTop: '2vh'}} variant='warning'>Events</Button>
+          </div>
+          <div style={{textAlign: 'center'}}>
+            <Button style={{width: '20vh', borderStyle: 'solid', marginTop: '2vh'}} variant='warning'>Friends</Button>
+          </div>
+          <div style={{textAlign: 'center'}}>
+            <Button style={{width: '20vh', borderStyle: 'solid', marginTop: '2vh'}} variant='warning'>Groups</Button>
+          </div>
+        </div>
         </Col>
         {Auth.loggedIn() ? (
           <>

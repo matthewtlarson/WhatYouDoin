@@ -43,10 +43,10 @@ const Profile = () => {
     <div style={{backgroundColor: 'grey'}}>
       <p>{ (user.connections.length)} </p>
       <div style={{textAlign: 'center'}}>
-        <Image style={{width: '15vh', marginBottom: '1vh'}} className="col-6" fluid="true" roundedCircle="true" src={logo}/>
+        <Image style={{width: '12vh', marginBottom: '1vh', marginTop: '1vh'}} fluid="true" src={logo}/>
         <Button style={{width: '11vh', margin: '3vh'}} variant="warning">Full Profile</Button>{' '}
       </div>
-      <Container className="col-3"style={{borderWidth: '5px', borderStyle: 'solid'}}>
+      <Container style={{borderWidth: '5px', borderStyle: 'solid'}}>
         <h1 style={{textAlign: 'center'}}>sheinen22</h1>
         <ul style={{listStyleType: 'none'}}>
           <li>Friends: </li>
