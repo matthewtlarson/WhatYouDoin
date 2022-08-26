@@ -34,7 +34,7 @@ const UserFeed = () => {
 
   return (
         <form style={{width: '100%', marginTop: '30px'}}>
-          <div className="form-group border border-primary p-3 mb-2 bg-light text-dark text-center">
+          <div className="form-group border border-primary p-3 mb-2 text-dark text-center" style={{backgroundColor: 'grey'}}>
             <label for="exampleTextarea1"><h3>Have an event coming up?</h3></label>
             <input type="text" class="form-control" style={{height: '100px'}} placeholder="enter the details for your event here" />
           </div>

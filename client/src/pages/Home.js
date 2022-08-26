@@ -23,15 +23,15 @@ const Home = () => {
         {Auth.loggedIn() ? (
           <>
 
-            <Col sm={3} style={{ background: 'gold' }} className='d-flex flex-grow-1'>
+            <Col sm={3} style={{ background: 'white' }} className='d-flex flex-grow-1'>
               <UserFeed />
             </Col>
-            <Col sm={3} style={{ background: 'grey', marginRight: '50px' }}>
+            <Col sm={2} style={{ background: 'grey', marginRight: '50px' }}>
               <UserProfile />
             </Col>
           </>
         ) : (
-          <Col sm={8} style={{ background: 'orange', marginTop: 25, }} className='text-center d-flex justify-content-center'> 
+          <Col sm={8} style={{ background: 'gold', marginTop: 25, }} className='text-center d-flex justify-content-center'> 
           <div style={{marginTop: '15%'}}> <Login /> </div>
           <br/>
           <div style={{marginTop: '15%'}}> <Signup /> </div>
