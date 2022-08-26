@@ -11,20 +11,13 @@ import { QUERY_USER, QUERY_ME, QUERY_USER_CARD } from '../../utils/queries';
 import Auth from '../../utils/auth';
 
 const Profile = () => {
-  // const { email: userParam } = useParams();
+
   const profile = Auth.getProfile()
   const { loading, data } = useQuery(QUERY_USER_CARD, {
     variables: { email: profile.data.email }
   })
-  // const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-  //   variables: { email: userParam },
-  // });
 
   const user = data?.me || data?.user || {};
-  // // navigate to personal profile page if email is yours
-  // if (Auth.loggedIn() && Auth.getProfile().data.email === userParam) {
-  //   return <Navigate to="/" />;
-  // }
 
   if (loading) {
     return <div>Loading...</div>;
@@ -40,21 +33,20 @@ const Profile = () => {
   }
 
   return (
-    <div style={{backgroundColor: 'grey'}}>
-      <p>{ (user.connections.length)} </p>
+    <div>
       <div style={{textAlign: 'center'}}>
         <Image style={{width: '12vh', marginBottom: '1vh', marginTop: '1vh'}} fluid="true" src={logo}/>
         <Button style={{width: '11vh', margin: '3vh'}} variant="warning">Full Profile</Button>{' '}
       </div>
-      <Container style={{borderWidth: '5px', borderStyle: 'solid'}}>
+      <div style={{borderWidth: '5px', borderStyle: 'solid'}}>
         <h1 style={{textAlign: 'center'}}>sheinen22</h1>
         <ul style={{listStyleType: 'none'}}>
-          <li>Friends: </li>
+          <li>Friends: { (user.connections.length)} </li>
           <li>Connections: </li>
           <li>Events: </li>
           <li>Flake Rating: </li>
         </ul>
-      </Container>
+      </div>
     </div>
   );
 };

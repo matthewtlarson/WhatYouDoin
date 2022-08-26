@@ -17,6 +17,10 @@ const eventSchema = new Schema ({
         type: String,
         trim: true
     },
+    date: {
+        type: String,
+        trim: true
+    },
     commitments: [
         {
             type: String,
