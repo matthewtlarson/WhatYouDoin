@@ -13,11 +13,11 @@ import Auth from "../utils/auth";
 
 const Home = () => {
   return (
-    <Container>
+    <Container fluid='true'>
       <Row className="row justify-content-between">
         <Col
           sm={2}
-          style={{ background: "grey", minHeight: "90vh", marginTop: 25 }}
+          style={{ background: "grey", minHeight: "90vh", marginLeft: '50px'}}
         >
           Test This sidebar out
         </Col>
@@ -30,7 +30,7 @@ const Home = () => {
             >
               <UserFeed />
             </Col>
-            <Col sm={3} style={{ background: "red" }}>
+            <Col sm={2} style={{ background: "red", marginRight: '50px' }}>
               <UserProfile />
             </Col>
           </>

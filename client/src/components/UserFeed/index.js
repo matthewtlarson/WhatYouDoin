@@ -33,9 +33,13 @@ const UserFeed = () => {
   }
 
   return (
-    <div>
-      <h1>This is a test. You reached the div ***UserFeed box*** since you've logged in!!!! </h1>
-    </div>
+        <form style={{width: '100%', marginTop: '30px'}}>
+          <div className="form-group border border-primary p-3 mb-2 text-dark text-center" style={{backgroundColor: 'grey'}}>
+            <label for="exampleTextarea1"><h3>Have an event coming up?</h3></label>
+            <input type="text" class="form-control" style={{height: '100px'}} placeholder="enter the details for your event here" />
+          </div>
+          <button type="submit" className="btn btn-primary p-3 mb-2 bg-danger text-white" style={{width: '50%', marginLeft: '25%'}}>Post Event!</button>
+        </form>
   );
 };
 
