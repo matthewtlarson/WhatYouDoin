@@ -1,5 +1,5 @@
 :root {
-  --primary: #53575c;
+  --primary: #4F4D53;
   --secondary: #f4f118;
   --tertiary: #B12704;
   --light: #fafafa;
@@ -17,6 +17,7 @@ html,
 body {
   min-height: 100%;
   height: 100%;
+  
 }
 
 body {
@@ -27,6 +28,7 @@ body {
   line-height: 1.5;
   font-size: 16px;
   color: var(--dark);
+  
 }
 
 h1,
@@ -39,6 +41,7 @@ h6 {
   font-weight: 500;
   margin: 5px 0;
   line-height: 1.25;
+  
 }
 
 h1 {
@@ -46,7 +49,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 h3 {
@@ -55,19 +58,23 @@ h3 {
 
 h4 {
   font-size: 1.5rem;
+  
 }
 
 h5 {
   font-size: 1.25rem;
+  
 }
 
 h6 {
   font-size: 1rem;
+  
 }
 
 p {
   font-size: 1.1rem;
   margin-top: 0;
+  
 }
 
 a {
@@ -83,10 +90,12 @@ a:hover {
 header {
   background: var(--primary);
   max-height: 100px;
+  font-size: larger;
 }
 
 header a {
   color: var(--light);
+  
 }
 
 button {
@@ -111,8 +120,8 @@ button[disabled] {
 }
 
 img {
-  max-width: 90px;
-  max-height: 50px;
+  max-width: 120px;
+  max-height: 90px;
   padding-left: 30px;
   padding-bottom: 5px;
 }
@@ -134,7 +143,7 @@ input {
   padding: 0.25rem;
   border: 1px solid var(--dark);
   outline: none;
-  border-radius: 3px;
+  border-radius: 10px;
   transition: box-shadow 0.2s;
 }
 
@@ -149,10 +158,12 @@ input:focus {
   margin-left: auto;
   margin-right: auto;
   height: 100%;
+  font-size: larger;
 }
 .left-side {
   min-height: 100vh;
   float: left;
+  
 }
 .flex-row {
   display: flex;
@@ -170,6 +181,7 @@ input:focus {
 .mx-1 {
   margin-right: var(--spacing-one);
   margin-left: var(--spacing-one);
+  
 }
 
 .mx-2 {
@@ -180,6 +192,7 @@ input:focus {
 .my-1 {
   margin-top: var(--spacing-one);
   margin-bottom: var(--spacing-one);
+  font-size: x-large;
 }
 
 .my-2 {
@@ -190,26 +203,33 @@ input:focus {
 .px-1 {
   padding-right: var(--spacing-one);
   padding-left: var(--spacing-one);
+  
+  
 }
 
 .px-2 {
   padding-right: var(--spacing-two);
   padding-left: var(--spacing-two);
+  
 }
 
 .py-1 {
   padding-top: var(--spacing-one);
   padding-bottom: var(--spacing-one);
+  
+  
 }
 
 .py-2 {
   padding-top: var(--spacing-two);
   padding-bottom: var(--spacing-two);
+  
 }
 
 .card {
   width: 25%;
   text-align: center;
+  
 }
 
 .error-text {
@@ -220,4 +240,101 @@ input:focus {
   .card {
     width: 100%;
   }
+}
+/**************************/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body{
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+}
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #4F4d53;
+    padding: 20px 0;
+    
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #d7c81b;
+	text-transform: capitalize;
+	margin-bottom: 30px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+  
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
 }
