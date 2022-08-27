@@ -41,7 +41,7 @@ const Profile = () => {
       <div style={{borderWidth: '5px', borderStyle: 'solid'}}>
         <h1 style={{textAlign: 'center'}}>sheinen22</h1>
         <ul style={{listStyleType: 'none'}}>
-          <li>Friends: { (user.connections.length)} </li>
+          <li>Friends: { user.connections.length} </li>
           <li>Connections: </li>
           <li>Events: </li>
           <li>Flake Rating: </li>

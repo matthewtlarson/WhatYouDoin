@@ -12,11 +12,6 @@ const typeDefs = gql`
     area: String!
     birthday: String
     flakeRating: String
-<<<<<<< HEAD
-    publicRequests: String
-    userRequests: String
-    connections: [Connection]
-=======
     events: [Event]!
     connections: [Connection]
   }
@@ -27,39 +22,18 @@ const typeDefs = gql`
     eventAuthor: String
     description: String
     createdAt: String
->>>>>>> 0dcfa8971e568a4ae44720e7849efeb031190528
   }
 
   type Connection {
     selfUsername: String!
     otherUsername: String
     closeFriend: Boolean
-<<<<<<< HEAD
-    # connections: [String] per Rachel 
-  }
-
-
-  type Event {
-    createdAt: String!
-    time: String
-    title: String
-    commitments: [String]
-    flake: [String]
-    theme: String
-    active: String
-    author: String  #change string to User. we could pull event by ID and find author user and find their list of connections. 
-    description: String
-    address: String
-    private: String
-    image: String
-=======
   }
 
   type Group {
     title: String
     members: [User]
     events: [Event]
->>>>>>> 0dcfa8971e568a4ae44720e7849efeb031190528
   }
 
   type Recap {
@@ -75,7 +49,7 @@ const typeDefs = gql`
 
   type Query {
     me: User
-    user(username: String!): User
+    user(email: String!): User
     users: [User]
     username: [User]
     # events: Event
@@ -85,7 +59,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    addUser(firstName: String!, lastName: String!, username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addEvent(description: String!, eventAuthor: String!): Event
   }

@@ -78,75 +78,73 @@ const eventSchema = new Schema({
         get: (timestamp) => dateFormat(timestamp),
       },
     },
-<<<<<<< HEAD
-    time: {
+  ],
+  time: {
+    type: String,
+    required: true,
+    trim: true
+},
+title: {
+    type: String,
+    trim: true
+},
+date: {
+    type: String,
+    trim: true
+},
+commitments: [
+    {
         type: String,
-        required: true,
         trim: true
     },
-    title: {
+],
+flakes: [
+    {
         type: String,
-        trim: true
-    },
-    date: {
-        type: String,
-        trim: true
-    },
-    commitments: [
-        {
+        trim: true,
+    }
+],
+theme: {
+    type: String,
+    trim: true
+},
+active: {
+    type: Boolean
+},
+author: {
+    type: String,
+    required: true,
+    trim: true,
+},
+description: {
+    type: String,
+    trim: true
+},
+address: {
+    type: String,
+    trim: true
+},
+private: {
+    type: Boolean
+},
+image: {
+    type: String,
+    trim: true
+},
+recaps: [
+    {
+        image: {
             type: String,
             trim: true
         },
-    ],
-    flakes: [
-        {
+        eventDescription: {
             type: String,
             trim: true,
-        }
-    ],
-    theme: {
-        type: String,
-        trim: true
-    },
-    active: {
-        type: Boolean
-    },
-    author: {
-        type: String,
-        required: true,
-        trim: true,
-    },
-    description: {
-        type: String,
-        trim: true
-    },
-    address: {
-        type: String,
-        trim: true
-    },
-    private: {
-        type: Boolean
-    },
-    image: {
-        type: String,
-        trim: true
-    },
-    recaps: [
-        {
-            image: {
-                type: String,
-                trim: true
-            },
-            eventDescription: {
-                type: String,
-                trim: true,
-                required: true
-            },
-        }
-    ]
-=======
-  ],
->>>>>>> 0dcfa8971e568a4ae44720e7849efeb031190528
+            required: true
+        },
+    }
+]
+
 });
 const Event = model("Event", eventSchema);
 module.exports = Event;
