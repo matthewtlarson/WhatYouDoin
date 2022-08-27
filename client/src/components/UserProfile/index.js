@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import Image from 'react-bootstrap/Image'
@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 import logo from "../../assets/img/logo.png"
 
-import { QUERY_USER, QUERY_ME, QUERY_USER_CARD } from '../../utils/queries';
+import { QUERY_USER_CARD } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 

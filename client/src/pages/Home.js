@@ -62,6 +62,7 @@ const Home = () => {
             </Col>
             <Col sm={2} style={{ background: "grey", }} className="d-flex flex-grow-1">
               <UserProfile />
+              
             </Col>
           </>
         ) : (
