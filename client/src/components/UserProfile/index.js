@@ -1,9 +1,8 @@
 import React from 'react';
-import { Navigate, useParams } from 'react-router-dom';
+import { Navigate, useParams, Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import Image from 'react-bootstrap/Image'
 import Container from 'react-bootstrap/Container'
-import Button from 'react-bootstrap/Button'
 import logo from "../../assets/img/logo.png"
 
 import { QUERY_USER, QUERY_ME } from '../../utils/queries';
@@ -40,7 +39,7 @@ const Profile = () => {
     <div style={{backgroundColor: 'grey'}}>
       <div style={{textAlign: 'center'}}>
         <Image style={{width: '12vh', marginBottom: '1vh', marginTop: '1vh'}} fluid="true" src={logo}/>
-        <Button style={{width: '11vh', margin: '3vh'}} variant="warning">Full Profile</Button>{' '}
+        <Link to="/fullProfile" style={{width: '11vh', margin: '3vh'}} variant="warning">Full Profile</Link>
       </div>
       <Container style={{borderWidth: '5px', borderStyle: 'solid'}}>
         <h1 style={{textAlign: 'center'}}>sheinen22</h1>
