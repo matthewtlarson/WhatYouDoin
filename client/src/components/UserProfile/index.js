@@ -37,10 +37,10 @@ const Profile = () => {
   }
 
   return (
-    <div style={{backgroundColor: 'grey'}}>
+    <div style={{backgroundColor: 'white'}}>
       <div style={{textAlign: 'center'}}>
         <Image style={{width: '12vh', marginBottom: '1vh', marginTop: '1vh'}} fluid="true" src={logo}/>
-        <Button style={{width: '11vh', margin: '3vh'}} variant="warning">Full Profile</Button>{' '}
+        <Button style={{width: '11vh', margin: '3vh', backgroundColor: '#541675', color: 'white', borderColor: 'grey'}} variant="warning">Full Profile</Button>{' '}
       </div>
       <Container style={{borderWidth: '5px', borderStyle: 'solid'}}>
         <h1 style={{textAlign: 'center'}}>sheinen22</h1>

@@ -88,7 +88,7 @@ a:hover {
 }
 
 header {
-  background: var(--primary);
+  background: white;
   max-height: 100px;
   font-size: larger;
 }
@@ -275,7 +275,7 @@ ul{
 }
 .footer-col h4{
 	font-size: 18px;
-	color: #d7c81b;
+	color: #000000;
 	text-transform: capitalize;
 	margin-bottom: 30px;
 	font-weight: 500;
@@ -298,32 +298,32 @@ ul{
 .footer-col ul li a{
 	font-size: 16px;
 	text-transform: capitalize;
-	color: #ffffff;
+	color: #000000;
 	text-decoration: none;
 	font-weight: 300;
-	color: #bbbbbb;
+	color: #000000;
 	display: block;
 	transition: all 0.3s ease;
 }
 .footer-col ul li a:hover{
-	color: #ffffff;
+	color: #ff0000;
 	padding-left: 8px;
 }
 .footer-col .social-links a{
 	display: inline-block;
 	height: 40px;
 	width: 40px;
-	background-color: rgba(255,255,255,0.2);
+	background-color: rgba(0, 0, 0, 0.2);
 	margin:0 10px 10px 0;
 	text-align: center;
 	line-height: 40px;
 	border-radius: 50%;
-	color: #ffffff;
+	color: #000000;
 	transition: all 0.5s ease;
 }
 .footer-col .social-links a:hover{
 	color: #24262b;
-	background-color: #ffffff;
+	background-color: #ff0000;
 }
 
 /*responsive*/
