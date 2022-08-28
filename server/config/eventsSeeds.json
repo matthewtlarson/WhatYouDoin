@@ -1,6 +1,5 @@
 [
     {
-        "createdAt": "August 1st, 2022 at 7:45 am",
         "time": "8:00 pm",
         "title": "Back-to-school-party",
         "date": "August 31st, 2022",
@@ -8,7 +7,7 @@
         "flakes": [],
         "theme": "Beach",
         "active": true,
-        "eventAuthor": "mlars2",
+        "eventAuthor": "Pam1",
         "description": "This party is to celebrate everyone goinb back to school!",
         "address": "1245 N Cherry Blossom Lane, Tucson, Arizona, 78732",
         "private": false,
@@ -16,7 +15,6 @@
         "recap": []
     },
     {
-        "createdAt": "Sepetember 21st, 2021 at 8:20 pm",
         "time": "7:30 pm",
         "title": "Matthew Larson's Birthday Party",
         "date": "September 30th, 2021",
@@ -24,7 +22,7 @@
         "flakes": [],
         "theme": "Playboy",
         "active": false,
-        "eventAuthor": "mlars2",
+        "eventAuthor": "Pam1",
         "description": "Matthew Larson's 21st Birthday rager",
         "address": "6050 E 4th Street, Tucson, Arizona, 78732",
         "private": true,
@@ -32,7 +30,6 @@
         "recap": []
     },
     {
-        "createdAt": "July 3rd, 2022 at 3:00 pm",
         "time": "1:00 pm",
         "title": "July 4th America Celebration",
         "date": "July 4th, 2022",
@@ -48,7 +45,6 @@
         "recap": []
     },
     {
-        "createdAt": "August 15th, 2022 at 4:00 pm",
         "time": "10:00 pm",
         "title": "High Value Halloween Party",
         "date": "October 31st, 2022",
@@ -64,7 +60,6 @@
         "recap": []
     },
     {
-        "createdAt": "June 30th, 2022 at 7:00pm",
         "time": "12:00 pm",
         "title": "Stephen's Wedding",
         "date": "July 28th, 2022",
@@ -80,7 +75,6 @@
         "recap": []
     },
     {
-        "createdAt": "May 20th, 2022 at 2:30 pm",
         "time": "6:00",
         "title": "Book Club Party",
         "date": "September 12th, 2022",
@@ -96,7 +90,6 @@
         "recap": []
     },
     {
-        "createdAt": "August 2nd, 2022 at 9:00 pm",
         "time": "3:00 pm",
         "title": "Jungle Day Party Get-Together",
         "date": "August 10th, 2022",
@@ -112,7 +105,6 @@
         "recap": []
     },
     {
-        "createdAt": "August 26th, 2022 at 3:00 pm",
         "time": "4:00 pm",
         "title": "Dinner Party!!",
         "date": "August 31st, 2022",
@@ -126,5 +118,5 @@
         "private": true,
         "image": "",
         "recap": []
-    },
+    }
 ]

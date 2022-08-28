@@ -4,24 +4,22 @@ import { useQuery } from '@apollo/client';
 import Button from 'react-bootstrap/Button';
 import Collapse from 'react-bootstrap/Collapse';
 
-import { QUERY_USER, QUERY_ME } from '../../utils/queries';
+import UserEventsFeed from '../UserEventsFeed'
+
+import { QUERY_USER_DATA } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
 const UserFeed = () => {
 
   const [open, setOpen] = useState(false);
-  const { email: userParam } = useParams();
-
-  const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-    variables: { email: userParam },
+  
+  const profile = Auth.getProfile();
+  const { loading, data } = useQuery(QUERY_USER_DATA, {
+    variables: { email: profile.data.email }
   });
 
   const user = data?.me || data?.user || {};
-  // navigate to personal profile page if email is yours
-  if (Auth.loggedIn() && Auth.getProfile().data.email === userParam) {
-    return <Navigate to="/" />;
-  }
 
   if (loading) {
     return <div>Loading...</div>;
@@ -35,7 +33,7 @@ const UserFeed = () => {
       </h4>
     );
   }
-
+  
   return (
     <>
       <div style={{ display: 'flex', flexDirection: 'column', width: '100%', backgroundColor: 'white' }}>
@@ -50,9 +48,8 @@ const UserFeed = () => {
         </Button>
         <Collapse in={open}>
           <div id="example-collapse-text">
-            <form style={{ height: '100px', width: '100%', backgroundColor: '#979dac' }}>
+            <form style={{  width: '100%', backgroundColor: '#979dac' }}>
               <div className="form-group border border-primary p-3 mb-2 text-dark text-center collpase">
-                <label for="exampleTextarea1"><h3>Have an event coming up?</h3></label>
                 <input type="text" class="form-control" style={{ height: '100px' }} placeholder="enter a description for your event here" />
                 <input type="text" class="form-control" style={{ height: '100px' }} placeholder="Date/Time of your event?" />
                 <input type="text" class="form-control" style={{ height: '100px' }} placeholder="where is the event being held?" />
@@ -70,14 +67,18 @@ const UserFeed = () => {
           </div>
         </Collapse>
 
-        <div style={{ background: 'grey', }}>
-          Test This
+        <div style={{ background: 'grey'}}>
+          <UserEventsFeed 
+          events={user.events}
+          author={user.events.eventAuthor}
+          username={user.username}
+          />
         </div>
         
       </div>
 
     </>
   );
-};
+}
 
 export default UserFeed;

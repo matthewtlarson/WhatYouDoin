@@ -19,6 +19,7 @@ const Home = () => {
   return (
     <Container fluid='true'>
       <Row className="row justify-content-between">
+
         {Auth.loggedIn() ? (
           <>
             <Col
@@ -60,6 +61,7 @@ const Home = () => {
             >
               <UserFeed />
             </Col>
+
             <Col sm={2} style={{ background: "grey", }} className="d-flex flex-grow-1">
               <UserProfile />
               
@@ -100,7 +102,7 @@ const Home = () => {
             </Col>
           </>
         )}
-        <footer className="footer">
+        <footer className="footer" style={{backgroundColor: '#F5F3F4'}}>
           <div className="container">
             <div className="row">
               <div className="footer-col col">

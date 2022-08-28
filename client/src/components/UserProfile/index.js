@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
-import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import Image from 'react-bootstrap/Image'
-import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 import logo from "../../assets/img/logo.png"
 
-import { QUERY_USER_CARD } from '../../utils/queries';
+import { QUERY_USER_DATA } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
 const Profile = () => {
 
   const profile = Auth.getProfile()
-  const { loading, data } = useQuery(QUERY_USER_CARD, {
+  const { loading, data } = useQuery(QUERY_USER_DATA, {
     variables: { email: profile.data.email }
   })
 
@@ -36,7 +34,7 @@ const Profile = () => {
     <div>
       <div style={{textAlign: 'center'}}>
         <Image style={{width: '12vh', marginBottom: '1vh', marginTop: '1vh'}} fluid="true" src={logo}/>
-        <Button style={{width: '11vh', margin: '3vh'}} variant="warning">Full Profile</Button>{' '}
+        <Button style={{width: '11vh', margin: '3vh', backgroundColor: '#541675', color: 'white', borderColor: 'grey'}} variant="warning">Full Profile</Button>{' '}
       </div>
       <div style={{borderWidth: '5px', borderStyle: 'solid'}}>
         <h1 style={{textAlign: 'center'}}>sheinen22</h1>

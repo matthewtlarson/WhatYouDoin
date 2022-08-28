@@ -11,6 +11,9 @@ export const QUERY_USER = gql`
       events {
         _id
         description
+        eventAuthor
+        date
+        address
         createdAt
       }
     }
@@ -63,7 +66,7 @@ export const QUERY_ME = gql`
   }
 `;
 
-export const QUERY_USER_CARD = gql`
+export const QUERY_USER_DATA = gql`
   query user($email: String!) {
     user(email: $email) {
       _id
@@ -75,6 +78,13 @@ export const QUERY_USER_CARD = gql`
         selfUsername
         otherUsername
         closeFriend
+      }
+      events {
+        description
+        eventAuthor
+        date
+        # address
+        createdAt
       }
     }
   }
