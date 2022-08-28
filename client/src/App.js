@@ -11,7 +11,7 @@ import { setContext } from '@apollo/client/link/context';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Nav from './components/Nav';
+// import Nav from './components/Nav';
 import NoMatch from './pages/NoMatch';
 
 const httpLink = createHttpLink({
@@ -38,7 +38,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <>
-            <Nav />
+            {/* <Nav /> */}
             <Routes>
               <Route 
                 path="/" 
