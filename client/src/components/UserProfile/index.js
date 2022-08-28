@@ -37,11 +37,11 @@ const Profile = () => {
         <Button style={{width: '11vh', margin: '3vh', backgroundColor: '#541675', color: 'white', borderColor: 'grey'}} variant="warning">Full Profile</Button>{' '}
       </div>
       <div style={{borderWidth: '5px', borderStyle: 'solid'}}>
-        <h1 style={{textAlign: 'center'}}>sheinen22</h1>
+        <h1 style={{textAlign: 'center'}}> {user.username} </h1>
         <ul style={{listStyleType: 'none'}}>
           <li>Friends: { user.connections.length} </li>
           <li>Connections: </li>
-          <li>Events: </li>
+          <li>Events: {user.events.length} </li>
           <li>Flake Rating: </li>
         </ul>
       </div>
