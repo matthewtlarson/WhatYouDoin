@@ -19,17 +19,17 @@ const Home = () => {
       <Row className="row justify-content-between">
         <Col
           sm={2}
-          style={{ background: "grey", minHeight: "90vh", marginLeft: '50px'}}
+          style={{ backgroundColor: "#f5f3f4", minHeight: "90vh", marginLeft: '50px'}}
         >
         <div>
           <div style={{textAlign: 'center'}}>
-            <Button style={{width: '20vh', borderStyle: 'solid', marginTop: '2vh'}} variant='warning'>Events</Button>
+            <Button style={{width: '20vh', borderStyle: 'solid', marginTop: '2vh', backgroundColor: '#541675', color: 'white', borderColor: 'grey'}} variant='warning'>Events</Button>
           </div>
           <div style={{textAlign: 'center'}}>
-            <Button style={{width: '20vh', borderStyle: 'solid', marginTop: '2vh'}} variant='warning'>Friends</Button>
+            <Button style={{width: '20vh', borderStyle: 'solid', marginTop: '2vh', backgroundColor: '#541675', color: 'white', borderColor: 'grey'}} variant='warning'>Friends</Button>
           </div>
           <div style={{textAlign: 'center'}}>
-            <Button style={{width: '20vh', borderStyle: 'solid', marginTop: '2vh'}} variant='warning'>Groups</Button>
+            <Button style={{width: '20vh', borderStyle: 'solid', marginTop: '2vh', backgroundColor: '#541675', color: 'white', borderColor: 'grey'}} variant='warning'>Groups</Button>
           </div>
         </div>
         </Col>
@@ -37,19 +37,19 @@ const Home = () => {
           <>
             <Col
               sm={3}
-              style={{ background: "orange" }}
+              style={{ background: "white", marginTop: '15px' }}
               className="d-flex flex-grow-1"
             >
               <UserFeed />
             </Col>
-            <Col sm={2} style={{ background: "red", marginRight: '50px' }}>
+            <Col sm={2} style={{ backgroundColor: "#f5f3f4", marginRight: '50px' }}>
               <UserProfile />
             </Col>
           </>
         ) : (
           <Col
             sm={8}
-            style={{ background: "orange", marginTop: 25 }}
+            style={{ background: "white", marginTop: 25 }}
             className="text-center d-flex justify-content-center"
           >
             <div style={{ marginTop: "15%" }}>
@@ -63,7 +63,7 @@ const Home = () => {
             </div>
           </Col>
         )}
-        <footer className="footer">
+        <footer className="footer" style={{backgroundColor: '#f5f3f4'}}>
           <div className="container">
             <div className="row">
               <div className="footer-col col">

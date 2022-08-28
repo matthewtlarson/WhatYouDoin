@@ -8,45 +8,37 @@ function Nav() {
     if (Auth.loggedIn()) {
       return (
         <ul className="flex-row">
-          <button type="button" className="btn btn-warning mt-4">
             <li className="mx-3 mt-2 p-1">
               {/* this is not using the Link component to logout or user and then refresh the application to the start */}
-              <a href="/" onClick={() => Auth.logout()}>
+              <a style={{color:'#541675'}} href="/" onClick={() => Auth.logout()}>
                 Logout
               </a>
             </li>
-          </button>
-          <button type="button" className="btn btn-warning mt-4">
-            <li className=" mt-2 p-1">
-              <Link to="/orderHistory">Test Tab</Link>
+            <li className="mt-2 p-1">
+              <Link to="/orderHistory" style={{color:'#541675'}}>Test Tab</Link>
             </li>
-          </button>
         </ul>
       );
     } else {
       return (
         <ul className="flex-row">
-          <button type="button" className="btn btn-warning mt-4">
             <li className="ml-3 mt-2 p-1">
-              <Link to="/login" style={{ textDecoration: "none" }}>
+              <Link to="/login" style={{color:'#541675'}}>
                 Login
               </Link>
             </li>
-          </button>
-          <button type="button" className="btn btn-warning mt-4">
             <li className="ml-3 mt-2 p-1">
-              <Link to="/signup" style={{ textDecoration: "none" }}>
+              <Link to="/signup" style={{color:'#541675'}}>
                 Signup
               </Link>
             </li>
-          </button>
         </ul>
       );
     }
   }
 
   return (
-    <header className="flex-row px-5 justify-content-end">
+    <header className="flex-row px-5 justify-content-end" style={{height: '100px', backgroundColor: '#F5F5F5'}}>
       <h1>
         <Link to="/" style={{ textDecoration: "none" }}>
           <img
