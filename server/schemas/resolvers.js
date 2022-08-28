@@ -12,7 +12,10 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
     user: async (parent, { email }) => {
-      return User.findOne({ email }).populate('events');
+      return User.findOne({ email }).populate('events').populate({
+        path: 'friends.events',
+        populate: '_id'
+      });
     },
     users: async (parent) => {
       return User.find({});

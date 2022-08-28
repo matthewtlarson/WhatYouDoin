@@ -12,15 +12,18 @@ const typeDefs = gql`
     area: String!
     birthday: String
     flakeRating: String
+    friends: [User]
     events: [Event]!
     connections: [Connection]
   }
+
   type Event {
     _id: ID
     title: String
     date: String
     eventAuthor: String
     description: String
+    address: String
     createdAt: String
   }
 

@@ -21,7 +21,7 @@ const UserEventsFeed = ({
                     <div className="card-body">
                         <h5 className="card-title">Event-Date: {event.date}</h5>
                         <p className="card-text">Event-Description: {event.description}</p>
-                        <p>Event-Address: "NOT WORKING - NEED TO FIX"</p>
+                        <p>Event-Address: {event.address}</p>
                     </div>
                     <div className="card-footer text-muted">
                         Event-Author: {event.eventAuthor} // Event-CreatedAt: {event.createdAt}

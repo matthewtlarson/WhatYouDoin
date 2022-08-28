@@ -86,6 +86,7 @@ export const QUERY_USER_DATA = gql`
         date
         eventAuthor
         description
+        address
         createdAt
       }
     }
