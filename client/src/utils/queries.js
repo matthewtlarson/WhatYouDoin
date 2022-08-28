@@ -20,18 +20,18 @@ export const QUERY_USER = gql`
   }
 `;
 
-export const QUERY_EVENTS = gql`
-  query getEvents {
-    events {
-      _id
-      title
-      date
-      description
-      eventAuthor
-      createdAt
-    }
-  }
-`;
+// export const QUERY_EVENTS = gql`
+//   query getEvents {
+//     events {
+//       _id
+//       title
+//       date
+//       description
+//       eventAuthor
+//       createdAt
+//     }
+//   }
+// `;
 
 export const QUERY_EVENT = gql`
   query event($eventId: ID!) {
@@ -66,7 +66,8 @@ export const QUERY_ME = gql`
   }
 `;
 
-export const QUERY_USER_DATA = gql`
+// VIEW MY THOUGHTS
+export const QUERY_USER_DATA = gql` 
   query user($email: String!) {
     user(email: $email) {
       _id
@@ -80,10 +81,11 @@ export const QUERY_USER_DATA = gql`
         closeFriend
       }
       events {
-        description
-        eventAuthor
+        _id
+        title
         date
-        # address
+        eventAuthor
+        description
         createdAt
       }
     }

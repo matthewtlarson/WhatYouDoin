@@ -70,7 +70,6 @@ const UserFeed = () => {
         <div style={{ background: 'grey'}}>
           <UserEventsFeed 
           events={user.events}
-          author={user.events.eventAuthor}
           username={user.username}
           />
         </div>
