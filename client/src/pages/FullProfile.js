@@ -8,14 +8,20 @@ import Col from "react-bootstrap/Col";
 import logo from "../assets/img/logo.png"
 import Auth from "../utils/auth";
 import Button from 'react-bootstrap/Button'
+import ProfileFeed from "../components/ProfileFeed";
+import FullProfileProf from '../components/FullProfileProf';
+import pic1 from "../assets/img/pic1.png"
+import pic2 from "../assets/img/pic2.png"
+import pic3 from "../assets/img/pic3.png"
+import pic4 from "../assets/img/pic4.png"
 
 const FullProfile = () => {
 return (
-    <Container>
-        <Row>
+    <Container fluid='true'>
+        <Row className="row justify-content-between">
         <Col
               sm={2}
-              style={{ background: "grey", minHeight: "90vh", marginLeft: '50px' }} className=" position-relative"
+              style={{ background: "grey", minHeight: "100vh", flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center' }} className="d-flex flex-grow-1"
               >
               <div>
                 <div>
@@ -33,7 +39,8 @@ return (
                   </div>
                 </div>
               </div>
-              <div className=" position-absolute bottom-0 start-50 translate-middle-x" style={{marginBottom: '10%'}}>
+
+              <div className=" mt-auto" style={{marginBottom: '10%'}}>
                 <button type="button" className="btn btn-warning mt-4" style={{ width: '20vh', borderStyle: 'solid', marginTop: '2vh', }}>
                   {/* this is not using the Link component to logout or user and then refresh the application to the start */}
                   <a href="/" onClick={() => Auth.logout()}>
@@ -42,29 +49,25 @@ return (
                 </button>
               </div>
             </Col>
-            <Col className="col-3" style={{marginTop: "3vh"}}>
-                <div style={{textAlign: 'center', backgroundColor: 'grey'}}>
-                    <Image style={{width: '12vh', marginBottom: '1vh', marginTop: '1vh'}} fluid="true" src={logo}/>
-                    <Link to="/fullProfile" style={{width: '11vh', margin: '3vh'}} variant="warning">Full Profile</Link>
-                </div>
-                <div style={{borderWidth: '3px', borderStyle: 'solid'}}>
-                    <h1 style={{textAlign: 'center'}}>sheinen22</h1>
-                    <ul style={{listStyleType: 'none'}}>
-                    <li>Friends: </li>
-                    <li>Connections: </li>
-                    <li>Events: </li>
-                    <li>Flake Rating: </li>
-                    </ul>
-                </div>
-                <div style={{borderWidth: '3px', borderStyle: 'solid', marginTop: '5vh', marginBottom: '3vh', backgroundColor: 'grey'}}>
-                    <h4 style={{textAlign: 'center'}}>Pictures from Events</h4>
-                    <p style={{textAlign: "center"}}>No Pictures</p>
+
+            <Col sm={3} style={{marginTop: "3vh"}}>
+                <FullProfileProf />
+                <div style={{borderWidth: '3px', borderStyle: 'solid', marginTop: '5vh', marginBottom: '3vh', backgroundColor: 'grey', textAlign: 'center'}}>
+                    <h4>Pictures from Events</h4>
+                    {/* <p style={{textAlign: "center"}}>No Pictures</p> */}
+                    <Image style={{width: '30vh', minHeight: '25vh'}} fluid="true" src={pic1}/>
+                    <Image style={{width: '30vh', minHeight: '25vh'}} fluid="true" src={pic2}/>
+                    <Image style={{width: '30vh', minHeight: '25vh'}} fluid="true" src={pic3}/>
+                    <Image style={{width: '30vh', minHeight: '25vh'}} fluid="true" src={pic4}/>
                     <p style={{textAlign: "right", textJustify: 'center'}}>View All</p>
                 </div>
             </Col>
-            <Col fluid='true' className="col-7" style={{backgroundColor: 'grey', marginTop: '3vh'}}>
-               <h1 style={{textAlign: 'center'}}>Events</h1>
+            <Col sm={7} style={{ background: "grey", }} className="d-flex flex-grow-1">
+              <ProfileFeed />
+              
             </Col>
+           
+               
         </Row>
     </Container>
     
