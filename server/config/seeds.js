@@ -1,24 +1,54 @@
-const db = require('./connection');
-const { User } = require('../models');
+const db = require("./connection");
+const { User, Event } = require("../models");
+const eventsSeeds = require('./eventsSeeds.json');
+const userSeeds = require('./userSeeds.json')
 
-db.once('open', async () => {
-    await User.deleteMany();
 
-  await User.create({
-    firstName: 'Pamela',
-    lastName: 'Washington',
-    email: 'pamela@testmail.com',
-    password: 'password12345'
-  });
 
-  await User.create({
-    firstName: 'Elijah',
-    lastName: 'Holt',
-    email: 'eholt@testmail.com',
-    password: 'password12345'
-  });
+db.once("open", async () => {
+  try {
 
-  console.log('users seeded');
+// clear out DB before creating 
+// npm run seed
+  await User.deleteMany({});
+  await Event.deleteMany({});
 
-  process.exit();
-})
+  await User.create(userSeeds);
+
+  // for (let i = 0; i < userSeeds.length; i++) {
+  //   const { _id, email } = await User.create(userSeeds[i]);
+  //   const user = await User.findOneAndUpdate(
+  //     { friends: email },
+  //     {
+  //       $addToSet: {
+  //         friends: _id,
+  //       },
+  //     }
+  //   );
+  // }
+
+
+
+
+  for (let i = 0; i < eventsSeeds.length; i++) {
+    const { _id, eventAuthor } = await Event.create(eventsSeeds[i]);
+    const user = await User.findOneAndUpdate(
+      { username: eventAuthor },
+      {
+        $addToSet: {
+          events: _id,
+        },
+      }
+    );
+  }
+} catch (err) {
+  console.error(err);
+  process.exit(1);
+}
+
+  
+
+  console.log("users and events seeded");
+
+  process.exit(0);
+});

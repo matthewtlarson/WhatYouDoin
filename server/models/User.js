@@ -4,7 +4,6 @@ const Event = require("./Event");
 
 const bcrypt = require("bcrypt");
 
-// new comment
 
 const userSchema = new Schema({
   firstName: {
@@ -15,6 +14,12 @@ const userSchema = new Schema({
   lastName: {
     type: String,
     required: true,
+    trim: true,
+  },
+  username: {
+    type: String,
+    required: true,
+    maxlength: 30,
     trim: true,
   },
   email: {
@@ -28,11 +33,6 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  username: {
-    type: String,
-    maxlength: 30,
-    trim: true,
-  },
   profilePicture: {
     type: String,
     trim: true,
@@ -43,7 +43,7 @@ const userSchema = new Schema({
     trim: true,
   },
   birthday: {
-    type: Date,
+    type: String,
   },
   flakeRating: {
     type: Number,
@@ -89,6 +89,13 @@ const userSchema = new Schema({
         type: Boolean,
         default: false,
       },
+    },
+  ],
+
+  friends: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User",
     },
   ],
 
