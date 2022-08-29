@@ -55,11 +55,13 @@ return (
                 <div style={{borderWidth: '3px', borderStyle: 'solid', marginTop: '5vh', marginBottom: '3vh', backgroundColor: 'grey', textAlign: 'center'}}>
                     <h4>Pictures from Events</h4>
                     {/* <p style={{textAlign: "center"}}>No Pictures</p> */}
-                    <Image style={{width: '30vh', minHeight: '25vh'}} fluid="true" src={pic1}/>
-                    <Image style={{width: '30vh', minHeight: '25vh'}} fluid="true" src={pic2}/>
-                    <Image style={{width: '30vh', minHeight: '25vh'}} fluid="true" src={pic3}/>
-                    <Image style={{width: '30vh', minHeight: '25vh'}} fluid="true" src={pic4}/>
-                    <p style={{textAlign: "right", textJustify: 'center'}}>View All</p>
+                    <Image style={{width: '40vh', minHeight: '25vh'}} fluid="true" src={pic1}/>
+                    <Image style={{width: '40vh', minHeight: '25vh'}} fluid="true" src={pic2}/>
+                    <Image style={{width: '40vh', minHeight: '25vh'}} fluid="true" src={pic3}/>
+                    <Image style={{width: '40vh', minHeight: '25vh'}} fluid="true" src={pic4}/>
+                    <p>
+                      <Button style={{textAlign: "right", textJustify: 'center'}}>View All</Button>
+                    </p>
                 </div>
             </Col>
             <Col sm={7} style={{ background: "grey", }} className="d-flex flex-grow-1">
