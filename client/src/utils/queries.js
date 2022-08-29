@@ -20,6 +20,11 @@ export const QUERY_USER = gql`
   }
 `;
 
+
+
+
+
+
 // export const QUERY_EVENTS = gql`
 //   query getEvents {
 //     events {
