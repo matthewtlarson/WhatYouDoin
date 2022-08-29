@@ -12,15 +12,18 @@ const typeDefs = gql`
     area: String!
     birthday: String
     flakeRating: String
+    friends: [User]
     events: [Event]!
     connections: [Connection]
   }
+
   type Event {
     _id: ID
     title: String
     date: String
     eventAuthor: String
     description: String
+    address: String
     createdAt: String
   }
 
@@ -49,7 +52,7 @@ const typeDefs = gql`
 
   type Query {
     me: User
-    user(username: String!): User
+    user(email: String!): User
     users: [User]
     username: [User]
     # events: Event
@@ -59,9 +62,9 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    addUser(firstName: String!, lastName: String!, username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addEvent(description: String!, eventAuthor: String!): Event
+    addEvent(title: String!, description: String!, address: String!, date: String!, ): Event
   }
 `;
 

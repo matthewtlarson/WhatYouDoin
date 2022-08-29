@@ -18,6 +18,7 @@ const userSchema = new Schema({
   },
   username: {
     type: String,
+    required: true,
     maxlength: 30,
     trim: true,
   },
@@ -88,6 +89,13 @@ const userSchema = new Schema({
         type: Boolean,
         default: false,
       },
+    },
+  ],
+
+  friends: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User",
     },
   ],
 
