@@ -10,6 +10,7 @@ export const QUERY_USER = gql`
       email
       events {
         _id
+        title
         description
         eventAuthor
         date
@@ -19,6 +20,11 @@ export const QUERY_USER = gql`
     }
   }
 `;
+
+
+
+
+
 
 // export const QUERY_EVENTS = gql`
 //   query getEvents {
@@ -43,6 +49,17 @@ export const QUERY_EVENT = gql`
     }
   }
 `;
+
+// export const QUERY_EVENTS = gql`
+//   query events {
+//     event {
+//       _id
+//       eventAuthor
+//       description
+//       createdAt
+//     }
+//   }
+// `;
 
 export const QUERY_GROUPS = gql`
   query groups {
