@@ -21,24 +21,6 @@ export const QUERY_USER = gql`
   }
 `;
 
-
-
-
-
-
-// export const QUERY_EVENTS = gql`
-//   query getEvents {
-//     events {
-//       _id
-//       title
-//       date
-//       description
-//       eventAuthor
-//       createdAt
-//     }
-//   }
-// `;
-
 export const QUERY_EVENT = gql`
   query event($eventId: ID!) {
     event(eventID: $eventId) {
@@ -49,17 +31,6 @@ export const QUERY_EVENT = gql`
     }
   }
 `;
-
-// export const QUERY_EVENTS = gql`
-//   query events {
-//     event {
-//       _id
-//       eventAuthor
-//       description
-//       createdAt
-//     }
-//   }
-// `;
 
 export const QUERY_GROUPS = gql`
   query groups {
@@ -83,7 +54,7 @@ export const QUERY_ME = gql`
   }
 `;
 
-// VIEW MY THOUGHTS
+
 export const QUERY_USER_DATA = gql` 
   query user($email: String!) {
     user(email: $email) {
@@ -106,6 +77,21 @@ export const QUERY_USER_DATA = gql`
         address
         createdAt
       }
+      friends {
+        _id
+        firstName
+        lastName
+        username
+        events {
+          _id
+          title
+          date
+          eventAuthor
+          description
+          address
+          createdAt
+      }
     }
+  }
   }
 `;

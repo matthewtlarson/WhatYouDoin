@@ -3,11 +3,6 @@ import React from "react";
 
 const UserEventsFeed = ({
   events,
-  username,
-  description,
-  eventAuthor,
-  date,
-  address,
 }) => {
   if (!events.length) {
     return <h3>no events</h3>;

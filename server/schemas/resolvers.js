@@ -11,9 +11,11 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     user: async (parent, { email }) => {
-      return User.findOne({ email }).populate("events").populate({
-        path: "friends.events",
-        populate: "_id",
+
+      return User.findOne({ email }).populate('events').populate({
+        path: 'friends',
+        populate: 'events'
+
       });
     },
     users: async (parent) => {
@@ -77,6 +79,7 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
   },
+
 };
 
 module.exports = resolvers;
