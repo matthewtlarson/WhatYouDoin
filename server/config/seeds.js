@@ -18,14 +18,12 @@ const getRandomFriend = (users, {_id}) => {
 db.once("open", async () => {
   try {
 
-// clear out DB before creating 
-// npm run seed
+
   await User.deleteMany({});
   await Event.deleteMany({});
 
   const users = await User.create(userSeeds);
   
-  // For each of the users that exist, make a random post of 10 words
   users.forEach(async (user) => {
     let friend = getRandomFriend(users, user);
     await User.findOneAndUpdate({

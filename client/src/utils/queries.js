@@ -10,6 +10,7 @@ export const QUERY_USER = gql`
       email
       events {
         _id
+        title
         description
         eventAuthor
         date
@@ -19,19 +20,6 @@ export const QUERY_USER = gql`
     }
   }
 `;
-
-// export const QUERY_EVENTS = gql`
-//   query getEvents {
-//     events {
-//       _id
-//       title
-//       date
-//       description
-//       eventAuthor
-//       createdAt
-//     }
-//   }
-// `;
 
 export const QUERY_EVENT = gql`
   query event($eventId: ID!) {
@@ -66,7 +54,7 @@ export const QUERY_ME = gql`
   }
 `;
 
-// VIEW MY THOUGHTS
+
 export const QUERY_USER_DATA = gql` 
   query user($email: String!) {
     user(email: $email) {

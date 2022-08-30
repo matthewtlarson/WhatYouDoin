@@ -9,7 +9,7 @@ import { QUERY_USER_DATA } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
-const Profile = () => {
+const FullProfileProf = () => {
 
   const profile = Auth.getProfile()
   const { loading, data } = useQuery(QUERY_USER_DATA, {
@@ -33,14 +33,14 @@ const Profile = () => {
 
   return (
     <div>
-      <div style={{textAlign: 'center'}}>
+      <div style={{textAlign: 'center', backgroundColor: 'grey'}}>
         <Image style={{width: '12vh', marginBottom: '1vh', marginTop: '1vh'}} fluid="true" src={logo}/>
-        <Link style={{width: '11vh', margin: '3vh', backgroundColor: '#541675', color: 'white', borderColor: 'grey'}} variant="warning" to="/FullProfile">Full Profile</Link>{' '}
+        <Button style={{width: '11vh', margin: '3vh', backgroundColor: '#541675', color: 'white', borderColor: 'grey'}} variant="warning" to="/FullProfile">Add Friend</Button>{' '}
       </div>
       <div style={{borderWidth: '5px', borderStyle: 'solid'}}>
         <h1 style={{textAlign: 'center'}}> {user.username} </h1>
         <ul style={{listStyleType: 'none'}}>
-          <li>Friends: { user.friends.length} </li>
+          <li>Friends: { user.connections.length} </li>
           <li>Connections: </li>
           <li>Events: {user.events.length} </li>
           <li>Flake Rating: </li>
@@ -50,4 +50,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default FullProfileProf;
