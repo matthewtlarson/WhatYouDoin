@@ -4,11 +4,12 @@ import { useQuery, useMutation } from "@apollo/client";
 import Button from "react-bootstrap/Button";
 import Collapse from "react-bootstrap/Collapse";
 import { CREATE_EVENT } from "../../utils/mutations";
+import UserFriendsEvents from "../UserFriendsEvents";
 import UserEventsFeed from "../UserEventsFeed";
-import UserFriendsEvents from '../UserFriendsEvents'
 import { QUERY_EVENT, QUERY_USER, QUERY_USER_DATA } from "../../utils/queries";
 
 import Auth from "../../utils/auth";
+// import { color } from "@mui/system";
 
 const UserFeed = () => {
   const [title, setTitle] = useState("");
@@ -86,8 +87,7 @@ const UserFeed = () => {
   });
 
   const user = data?.me || data?.user || {};
-  // const events = data?.user.events || [];
-
+  const events = data?.user.events || [];
 
   if (loading) {
     return <div>Loading...</div>;
@@ -117,23 +117,25 @@ const UserFeed = () => {
           style={{
             height: "100px",
             width: "100%",
-            marginTop: "30px",
-            backgroundColor: "#979dac",
-            color: "black",
+            marginTop: "10px",
+            backgroundColor: "#a64dff",
+            color: "white",
+            marginBottom: "10px",
+            boxShadow: "5px 5px black",
           }}
           onClick={() => setOpen(!open)}
           aria-controls="example-collapse-text"
           aria-expanded={open}
         >
-          click me to post an event!
+          Click me to post an event!
         </Button>
         <Collapse in={open}>
           <div id="example-collapse-text">
             <form
-              style={{ width: "100%", backgroundColor: "#979dac" }}
+              style={{ width: "100%", backgroundColor: "gray" }}
               onSubmit={handleFormSubmit}
             >
-              <div className="form-group border border-primary p-3 mb-2 text-dark text-center collpase">
+              <div className="form-group border border-dark p-3 mb-2 text-dark text-center collpase">
                 <div>
                   <textarea
                     // name="text"
@@ -165,7 +167,7 @@ const UserFeed = () => {
                     // class="form-control"
                     className="form-input"
                     style={{ height: "100px" }}
-                    placeholder="Date/Time of your event?"
+                    placeholder="Date/Time of your Event?"
                     value={date}
                     onChange={handleChange}
                   ></textarea>
@@ -210,22 +212,27 @@ const UserFeed = () => {
               <button
                 type="submit"
                 onClick={refreshComponent}
-                className="btn btn-primary p-3 mb-2 bg-danger text-white"
-                style={{ width: "50%", marginLeft: "25%" }}
+                className="btn btn-primary p-3 mb-4 text-white"
+                style={{
+                  width: "50%",
+                  marginLeft: "26%",
+                  borderStyle: "solid",
+                  borderColor: "black",
+                  marginTop: "2vh",
+                  backgroundColor: "#a64dff",
+                  boxShadow: "5px 5px grey",
+                  color: "white",
+                }}
               >
                 Post Event!
               </button>
             </form>
           </div>
         </Collapse>
-        
-        <div style={{ background: 'grey'}}>
-          <UserEventsFeed 
-          events={user.events}
-          />
-          <UserFriendsEvents 
-          friends={user.friends}
-           />
+
+        <div style={{ background: "grey" }}>
+          <UserEventsFeed events={user.events} username={user.username} />
+          <UserFriendsEvents friends={user.friends} />
         </div>
       </div>
     </>
