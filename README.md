@@ -4,7 +4,7 @@
 **Created For:** University of Arizona Full-Stack Coding Bootcamp \
 **Developers:** Ryan Rathbun, Robert Pape, Stephen Heinen, Brandt Davidson, Maximus Cristian, and Denis Voia-Tipei \
 **Deployment Date:** August 30th, 2022 \
-**Published:** Heroku <https://powerquartet.herokuapp.com/> \
+**Published:** Heroku <https://peaceful-reef-29677.herokuapp.com/> \
 **Built With:** MERN Stack \
 **Technologies:** MongoDB, Express, React.JS, Node.JS, BCrypt Authentication, \
 **NPM Libraries:** React Router DOM, React Bootstrap, Mongoose, JWT Decode, GraphQL, Stripe \
@@ -19,9 +19,9 @@ This app will dynamically render any of the user's friends events directly when 
 It will also display any groups the user is in, as well as any of its own events.
 
 ## Web view: 
-![Form]
-![Feed]
-![Profile]
+![Login-Page](./client/src/assets/img/Sign-In-Page.png)
+![User-Feed-Page](./client/src/assets/img/User-Feed-Page.png)
+![User-Profile-Page](./client/src/assets/img/User-Profile-Page.png)
 
 &nbsp;
 
