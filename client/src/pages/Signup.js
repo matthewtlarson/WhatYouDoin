@@ -31,12 +31,28 @@ function Signup(props) {
   };
 
   return (
-    <div className="container my-1">
-      <h2>Signup</h2>
+    <div
+      className="container my-1"
+      style={{
+        color: "black",
+        border: "5px solid black",
+        boxShadow: "5px 5px grey",
+      }}
+    >
+      <h2
+        style={{
+          marginRight: "110px",
+          marginBottom: "30px",
+          fontStyle: "italic",
+        }}
+      >
+        Signup
+      </h2>
       <form onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
           <label htmlFor="firstName">First Name:</label>
           <input
+            style={{ boxShadow: "5px 5px grey" }}
             placeholder="First"
             name="firstName"
             type="firstName"
@@ -47,6 +63,7 @@ function Signup(props) {
         <div className="flex-row space-between my-2">
           <label htmlFor="lastName">Last Name:</label>
           <input
+            style={{ boxShadow: "5px 5px grey" }}
             placeholder="Last"
             name="lastName"
             type="lastName"
@@ -57,6 +74,7 @@ function Signup(props) {
         <div className="flex-row space-between my-2">
           <label htmlFor="username">Username:</label>
           <input
+            style={{ boxShadow: "5px 5px grey" }}
             placeholder="username"
             name="username"
             type="username"
@@ -67,6 +85,7 @@ function Signup(props) {
         <div className="flex-row space-between my-2">
           <label htmlFor="email">Email:</label>
           <input
+            style={{ boxShadow: "5px 5px grey" }}
             placeholder="youremail@test.com"
             name="email"
             type="email"
@@ -77,6 +96,7 @@ function Signup(props) {
         <div className="flex-row space-between my-2">
           <label htmlFor="pwd">Password:</label>
           <input
+            style={{ boxShadow: "5px 5px grey" }}
             placeholder="******"
             name="password"
             type="password"
@@ -84,8 +104,19 @@ function Signup(props) {
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
+        <div>
+          <button
+            type="submit"
+            className="glow-on-hover"
+            style={{
+              backgroundColor: "#023e7d",
+              borderRadius: "10px",
+              marginTop: "20px",
+              marginLeft: "30px",
+            }}
+          >
+            Submit
+          </button>
         </div>
       </form>
     </div>
