@@ -35,21 +35,20 @@ const Home = () => {
                     <Button style={{ width: '20vh', borderStyle: 'solid', marginTop: '2vh' }} variant='warning'>Events</Button>
                   </div>
                   <div>
-                    <Button style={{ width: '20vh', borderStyle: 'solid', marginTop: '2vh' }} variant='warning'>Friends</Button>
+                   <Link to='/friends'> <Button style={{ width: '20vh', borderStyle: 'solid', marginTop: '2vh' }} variant='warning'>Friends</Button></Link>
                   </div>
                   <div>
                     <Button style={{ width: '20vh', borderStyle: 'solid', marginTop: '2vh' }} variant='warning'>Groups</Button>
                   </div>
-                </div>
-              </div>
-
-              <div className=" mt-auto" style={{marginBottom: '10%'}}>
+                  <div className=" mt-auto" style={{marginBottom: '10%'}}>
                 <button type="button" className="btn btn-warning mt-4" style={{ width: '20vh', borderStyle: 'solid', marginTop: '2vh', }}>
                   {/* this is not using the Link component to logout or user and then refresh the application to the start */}
                   <a href="/" onClick={() => Auth.logout()}>
                     Logout
                   </a>
                 </button>
+              </div>
+                </div>
               </div>
             </Col>
 

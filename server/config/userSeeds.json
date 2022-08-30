@@ -24,62 +24,7 @@
         "username": "mlars2"
         
     },
-    {
-        "firstName": "Ryan",
-        "lastName": "Rathbun",
-        "email": "ryrathb@testmail.com",
-        "password": "password12345",
-        "username": "ryrathb"
-        
-    },
-    {
-        "firstName": "Andrew",
-        "lastName": "Tate",
-        "email": "highvaluemale@testmail.com",
-        "password": "password12345",
-        "username": "highvaluemale1"
-        
-    },
-    {
-        "firstName": "Brandt",
-        "lastName": "Davidson",
-        "email": "bdavidson@testmail.com",
-        "password": "password12345",
-        "username": "bdavidson1"
-        
-    },
-    {
-        "firstName": "Robbie",
-        "lastName": "Pape",
-        "email": "robbiep6@testmail.com",
-        "password": "password12345",
-        "username": "robbiep6"
-        
-    },
-    {
-        "firstName": "Denis",
-        "lastName": "Voia-tipei",
-        "email": "vtipei34@testmail.com",
-        "password": "password12345",
-        "username": "vtipei34"
-        
-    },
-    {
-        "firstName": "Stephen",
-        "lastName": "Heinen",
-        "email": "shein78@testmail.com",
-        "password": "password12345",
-        "username": "shein78"
-        
-    },
-    {
-        "firstName": "Maximus",
-        "lastName": "Cristian",
-        "email": "maxcris@testmail.com",
-        "password": "password12345",
-        "username": "maxcris"
-       
-    },
+    
     {
         "firstName": "Chris",
         "lastName": "Tolnai",

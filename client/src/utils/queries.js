@@ -89,6 +89,21 @@ export const QUERY_USER_DATA = gql`
         address
         createdAt
       }
+      friends {
+        _id
+        firstName
+        lastName
+        username
+        events {
+          _id
+          title
+          date
+          eventAuthor
+          description
+          address
+          createdAt
+      }
     }
+  }
   }
 `;

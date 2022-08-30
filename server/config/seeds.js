@@ -4,6 +4,16 @@ const eventsSeeds = require('./eventsSeeds.json');
 const userSeeds = require('./userSeeds.json')
 
 
+const genRandomIndex = (arr) => Math.floor(Math.random() * arr.length);
+
+const getRandomFriend = (users, {_id}) => {
+  const newFriend = users[genRandomIndex(users)];
+  if (newFriend._id !== _id) {
+    return newFriend
+  } 
+  return getRandomFriend(users, {_id})
+};
+
 
 db.once("open", async () => {
   try {
@@ -13,19 +23,19 @@ db.once("open", async () => {
   await User.deleteMany({});
   await Event.deleteMany({});
 
-  await User.create(userSeeds);
-
-  // for (let i = 0; i < userSeeds.length; i++) {
-  //   const { _id, email } = await User.create(userSeeds[i]);
-  //   const user = await User.findOneAndUpdate(
-  //     { friends: email },
-  //     {
-  //       $addToSet: {
-  //         friends: _id,
-  //       },
-  //     }
-  //   );
-  // }
+  const users = await User.create(userSeeds);
+  
+  // For each of the users that exist, make a random post of 10 words
+  users.forEach(async (user) => {
+    let friend = getRandomFriend(users, user);
+    await User.findOneAndUpdate({
+      _id: user._id
+    }, {
+      $addToSet: {
+        friends: friend._id,
+      },
+    })
+  });
 
 
 

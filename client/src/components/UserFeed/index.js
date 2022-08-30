@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Navigate, useParams } from 'react-router-dom';
+// import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import Button from 'react-bootstrap/Button';
 import Collapse from 'react-bootstrap/Collapse';
 
 import UserEventsFeed from '../UserEventsFeed'
+import UserFriendsEvents from '../UserFriendsEvents'
 
 import { QUERY_USER_DATA } from '../../utils/queries';
 
@@ -20,6 +21,7 @@ const UserFeed = () => {
   });
 
   const user = data?.me || data?.user || {};
+
 
   if (loading) {
     return <div>Loading...</div>;
@@ -70,8 +72,10 @@ const UserFeed = () => {
         <div style={{ background: 'grey'}}>
           <UserEventsFeed 
           events={user.events}
-          username={user.username}
           />
+          <UserFriendsEvents 
+          friends={user.friends}
+           />
         </div>
         
       </div>
