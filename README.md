@@ -2,7 +2,7 @@
 
 **App:** Event Planning and Coordinating Social Media App \
 **Created For:** University of Arizona Full-Stack Coding Bootcamp \
-**Developers:** Ryan Rathbun, Robert Pape, Stephen Heinen, Brandt Davidson, Maximus Cristian, and Denis Voia-Tipei \
+**Developers:** Ryan Rathbun, Robert Pape, Stephen Heinen, Brandt Davidson, Maximus Cristian, Matthew Larson and Denis Voia-Tipei \
 **Deployment Date:** August 30th, 2022 \
 **Published:** Heroku <https://peaceful-reef-29677.herokuapp.com/> \
 **Built With:** MERN Stack \
